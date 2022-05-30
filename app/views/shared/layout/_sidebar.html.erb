@@ -33,10 +33,13 @@
             <a href="#" class="nav-link">
               <i class="fa fa-circle-o nav-icon"></i>
               <p>
-                <%= agenda.title %>
-                <i class="right fa fa-angle-left"></i>
+              <%= agenda.title %>              
+                <i class="right fa fa-angle-left">
+                </i>              
               </p>
+              <%= link_to I18n.t('views.button.delete'), agenda_path(agenda.id), method: :delete, data: { confirm: '削除しますか？' },  class: 'btn btn-sm btn-danger' %>
             </a>
+            
             <ul class="nav nav-treeview" style="display: block;">
               <% agenda.articles.each do |article| %>
                 <li class="nav-item">
